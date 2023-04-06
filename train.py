@@ -70,8 +70,11 @@ TRAIN_DATASET = GraspNetDataset(cfgs.dataset_root, valid_obj_idxs, grasp_labels,
 TEST_DATASET = GraspNetDataset(cfgs.dataset_root, valid_obj_idxs, grasp_labels, camera=cfgs.camera, split='test_seen', num_points=cfgs.num_point, remove_outlier=True, augment=False)
 
 print(len(TRAIN_DATASET), len(TEST_DATASET))
+# TRAIN_DATALOADER = DataLoader(TRAIN_DATASET, batch_size=cfgs.batch_size, shuffle=True,
+#     num_workers=4, worker_init_fn=my_worker_init_fn, collate_fn=collate_fn)
+#change num_workers=4---->1 by cyb
 TRAIN_DATALOADER = DataLoader(TRAIN_DATASET, batch_size=cfgs.batch_size, shuffle=True,
-    num_workers=4, worker_init_fn=my_worker_init_fn, collate_fn=collate_fn)
+    num_workers=0, worker_init_fn=my_worker_init_fn, collate_fn=collate_fn)
 TEST_DATALOADER = DataLoader(TEST_DATASET, batch_size=cfgs.batch_size, shuffle=False,
     num_workers=4, worker_init_fn=my_worker_init_fn, collate_fn=collate_fn)
 print(len(TRAIN_DATALOADER), len(TEST_DATALOADER))

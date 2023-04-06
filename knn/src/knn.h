@@ -4,7 +4,9 @@
 #ifdef WITH_CUDA
 #include "cuda/vision.h"
 #include <THC/THC.h>
-extern THCState *state;
+
+THCState *state = at::globalContext().lazyInitCUDA();
+
 #endif
 
 
@@ -13,7 +15,7 @@ int knn(at::Tensor& ref, at::Tensor& query, at::Tensor& idx)
 {
 
     // TODO check dimensions
-    long batch, ref_nb, query_nb, dim, k;
+    int batch, ref_nb, query_nb, dim, k;
     batch = ref.size(0);
     dim = ref.size(1);
     k = idx.size(1);
@@ -22,7 +24,7 @@ int knn(at::Tensor& ref, at::Tensor& query, at::Tensor& idx)
 
     float *ref_dev = ref.data<float>();
     float *query_dev = query.data<float>();
-    long *idx_dev = idx.data<long>();
+    int *idx_dev = idx.data<int>();
 
 
 
@@ -54,7 +56,7 @@ int knn(at::Tensor& ref, at::Tensor& query, at::Tensor& idx)
 
 
     float *dist_dev = (float*)malloc(ref_nb * query_nb * sizeof(float));
-    long *ind_buf = (long*)malloc(ref_nb * sizeof(long));
+    int *ind_buf = (int*)malloc(ref_nb * sizeof(int));
     for (int b = 0; b < batch; b++) {
     knn_cpu(ref_dev + b * dim * ref_nb, ref_nb, query_dev + b * dim * query_nb, query_nb, dim, k,
       dist_dev, idx_dev + b * k * query_nb, ind_buf);

@@ -2,7 +2,7 @@
 
 
 void knn_cpu(float* ref_dev, int ref_width, float* query_dev, int query_width,
-    int height, int k, float* dist_dev, long* ind_dev, long* ind_buf)
+    int height, int k, float* dist_dev, int* ind_dev, int* ind_buf)
 {
     // Compute all the distances
     for(int query_idx = 0;query_idx<query_width;query_idx++)
@@ -16,7 +16,7 @@ void knn_cpu(float* ref_dev, int ref_width, float* query_dev, int query_width,
     }
 
     float temp_value;
-    long temp_idx;
+    int temp_idx;
     // sort the distance and get the index
     for(int query_idx = 0;query_idx<query_width;query_idx++)
     {

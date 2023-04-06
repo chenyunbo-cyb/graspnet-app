@@ -12,6 +12,8 @@ from torch.utils.cpp_extension import CUDAExtension
 
 requirements = ["torch", "torchvision"]
 
+# add by cyb
+extra_compile_args = {'cxx': ["-DMS_WIN64","-MD"]}
 
 def get_extensions():
     this_dir = os.path.dirname(os.path.abspath(__file__))
@@ -60,6 +62,7 @@ setup(
     version="0.1",
     author="foolyc",
     url="https://github.com/foolyc/torchKNN",
+    # url="https://github.com/unlimblue/KNN_CUDA",
     description="KNN implement in Pytorch 1.0 including both cpu version and gpu version",
     ext_modules=get_extensions(),
     cmdclass={"build_ext": torch.utils.cpp_extension.BuildExtension},

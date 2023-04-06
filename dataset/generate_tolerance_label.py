@@ -12,6 +12,12 @@ import multiprocessing as mp
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 ROOT_DIR = os.path.dirname(BASE_DIR)
 sys.path.append(os.path.join(ROOT_DIR, 'utils'))
+
+import sys
+# print(sys.path)
+sys.path.append('E:\graspnet\graspnet-baseline')
+sys.path.append('E:\graspnet\graspnet-baseline\dataset')
+
 from data_utils import compute_point_dists
 
 parser = argparse.ArgumentParser()
