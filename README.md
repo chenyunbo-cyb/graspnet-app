@@ -25,6 +25,10 @@ Baseline model for "GraspNet-1Billion: A Large-Scale Benchmark for General Objec
 - Pillow
 - tqdm
 
+## PyQt application
+
+![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/0099de93-a4a8-4d4f-b73f-80cab0b1613c)
+
 ## Installation
 Get the code.
 ```bash
