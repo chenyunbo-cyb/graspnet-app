@@ -13,9 +13,7 @@ Baseline model for "GraspNet-1Billion: A Large-Scale Benchmark for General Objec
     <br> Top 50 grasps detected by our baseline model.
 </div>
 
-![teaser](doc/teaser.png)
-
-## PyQt application
+## Application
 抓取位姿估计系统的体系结构主要分为四层，即数据输入层、数据预处理层、算法处理层和结果输出层。系统的层次结构如图所示。
  ![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/775c7c64-859c-4fe2-b0cd-0060fa44c354)
 
