@@ -15,6 +15,51 @@ Baseline model for "GraspNet-1Billion: A Large-Scale Benchmark for General Objec
 
 ![teaser](doc/teaser.png)
 
+## PyQt application
+抓取位姿估计系统的体系结构主要分为四层，即数据输入层、数据预处理层、算法处理层和结果输出层。系统的层次结构如图所示。
+ ![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/775c7c64-859c-4fe2-b0cd-0060fa44c354)
+
+### 加载点云数据模块界面
+ ![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/aed84b80-a1fe-4ba2-9e97-c411e6cd8ab5)
+### 打开点云文件
+ ![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/3d57c6ca-c417-4d9b-a545-32225397eecd)
+
+### 点云显示界面
+ ![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/b6c6799b-537f-449f-8cd4-28f71259c7b6)
+![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/976c1eae-a573-4705-a821-73a9caf6297b)
+
+### 点云预处理模块
+![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/eac74ffd-d162-42c3-9f62-d3569de9d609)
+ 
+### 统计滤波结果
+![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/2ef99512-9cca-4c66-8403-90b5d118b1ab)
+
+ 
+### 提取平面结果
+![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/a4cbf964-fad9-4645-8097-183f9777acd8)
+
+ 
+### 平面分割结果
+
+![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/c6436777-5f46-4e8b-91ea-af6cb0ef749a)
+
+
+### 体素降采样结果
+![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/b4d8b4e7-78d6-4a71-8e1e-d1cdd67be32f)
+
+### 估计抓取位姿模块
+ 
+### 估计抓取位姿模块界面
+ ![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/b90d2e6a-6782-478c-b719-87d5abee7ca0)
+
+### 抓取位姿信息输出结果
+ ![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/00f94020-6ab8-41dd-b7e2-ba5bb6a9c45e)
+ 
+### 抓取位姿可视化
+![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/99b3580e-a8b0-4142-b6ab-b9942c213296)
+
+
+
 ## Requirements
 - Python 3
 - PyTorch 1.6
@@ -24,10 +69,6 @@ Baseline model for "GraspNet-1Billion: A Large-Scale Benchmark for General Objec
 - SciPy
 - Pillow
 - tqdm
-
-## PyQt application
-
-![image](https://github.com/chenyunbo-cyb/graspnet-app/assets/52398597/0099de93-a4a8-4d4f-b73f-80cab0b1613c)
 
 ## Installation
 Get the code.
